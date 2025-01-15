@@ -35,10 +35,14 @@ background-color:goldenrod;
 form:hover{background-color:cyan;}
 </style>
 <script>
+function isNum(str) {
+    return /^\d+$/.test(str);
+}
 var arr=new Array();
 function GCDpush(ele){
 var x=document.getElementById(ele).value;
-arr.push(x);
+if(isNum(x))arr.push(x);
+else document.getElementById("err").value="error in input";
 document.getElementById(ele).value='';}
 function GCD(a,b){
 var d;
